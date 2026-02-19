@@ -9,7 +9,7 @@ Está diseñado para mostrar habilidades en desarrollo full-stack y buenas prác
 <h4 align="left">Tecnologías: </h3>
  <ul>
   <li>Backend: Java, Spring Boot, Spring Data JPA, PostgreSQL</li>
-  <li>Frontend: React, Axios, React Router (u otras librerías de tu elección)</li>
+  <li>Frontend: React, Vite</li>
   <li>DTO & Mapper Pattern para separar entidades y datos expuestos por la API</li>
   <li>Gestión de excepciones con ResourceNotFoundException</li>
 </ul> 
