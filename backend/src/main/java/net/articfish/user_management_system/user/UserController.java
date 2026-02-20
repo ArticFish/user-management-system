@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import lombok.AllArgsConstructor;
 import net.articfish.user_management_system.dto.UserDto;
+import jakarta.validation.Valid;
 
 
-
-
+@CrossOrigin("*")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/users")
@@ -21,7 +21,7 @@ public class UserController {
 
     // Build Add User REST API
     @PostMapping
-    public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
         UserDto savedUser = userService.createUser(userDto);
         return new ResponseEntity<>(savedUser,HttpStatus.CREATED);
     }
@@ -42,7 +42,7 @@ public class UserController {
 
     // Build Update User REST API
     @PutMapping("{id}")
-    public ResponseEntity<UserDto> updatedUser(@PathVariable("id") Long userId, @RequestBody UserDto updatedUser){
+    public ResponseEntity<UserDto> updatedUser(@PathVariable("id") Long userId, @Valid @RequestBody UserDto updatedUser){
         UserDto userDto = userService.updateUser(userId, updatedUser);
         return ResponseEntity.ok(userDto);
     }
